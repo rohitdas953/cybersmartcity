@@ -1,0 +1,368 @@
+/**
+ * Animation Styles for Smart City Security Operations Center
+ * 
+ * This file contains CSS animations and transitions used throughout the application
+ * to visualize security incidents, attacks, and system responses.
+ */
+
+/* Pulse animation for alerts and critical elements */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Slow pulse for less urgent notifications */
+@keyframes pulse-slow {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.03); opacity: 0.9; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+/* Blink animation for critical alerts */
+@keyframes blink {
+  0% { opacity: 1; }
+  49% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+.blink {
+  animation: blink 1s linear infinite;
+}
+
+/* Slow blink for warnings */
+@keyframes blink-slow {
+  0% { opacity: 1; }
+  40% { opacity: 1; }
+  50% { opacity: 0.5; }
+  60% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+.blink-slow {
+  animation: blink-slow 2s linear infinite;
+}
+
+/* Shake animation for critical errors */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.shake {
+  animation: shake 0.5s linear;
+}
+
+/* Rotate animation for loading indicators */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.rotate {
+  animation: rotate 1.5s linear infinite;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in forwards;
+}
+
+/* Fade out animation */
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.fade-out {
+  animation: fadeOut 0.3s ease-out forwards;
+}
+
+/* Slide in from top */
+@keyframes slideInTop {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.slide-in-top {
+  animation: slideInTop 0.3s ease-out forwards;
+}
+
+/* Slide in from bottom */
+@keyframes slideInBottom {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.slide-in-bottom {
+  animation: slideInBottom 0.3s ease-out forwards;
+}
+
+/* Slide in from left */
+@keyframes slideInLeft {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.3s ease-out forwards;
+}
+
+/* Slide in from right */
+@keyframes slideInRight {
+  from { transform: translateX(20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.3s ease-out forwards;
+}
+
+/* Glow effect for highlighted elements */
+@keyframes glow {
+  0% { box-shadow: 0 0 5px 0 rgba(255, 0, 0, 0.5); }
+  50% { box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.5); }
+  100% { box-shadow: 0 0 5px 0 rgba(255, 0, 0, 0.5); }
+}
+
+.glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Success glow effect */
+@keyframes glowSuccess {
+  0% { box-shadow: 0 0 5px 0 rgba(0, 255, 0, 0.5); }
+  50% { box-shadow: 0 0 20px 5px rgba(0, 255, 0, 0.5); }
+  100% { box-shadow: 0 0 5px 0 rgba(0, 255, 0, 0.5); }
+}
+
+.glow-success {
+  animation: glowSuccess 2s ease-in-out infinite;
+}
+
+/* Warning glow effect */
+@keyframes glowWarning {
+  0% { box-shadow: 0 0 5px 0 rgba(255, 255, 0, 0.5); }
+  50% { box-shadow: 0 0 20px 5px rgba(255, 255, 0, 0.5); }
+  100% { box-shadow: 0 0 5px 0 rgba(255, 255, 0, 0.5); }
+}
+
+.glow-warning {
+  animation: glowWarning 2s ease-in-out infinite;
+}
+
+/* Ripple effect for clicks and alerts */
+@keyframes ripple {
+  0% { transform: scale(0); opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  transform: translate(-50%, -50%) scale(0);
+  animation: ripple 1s ease-out;
+}
+
+/* Data flow animation for network traffic */
+@keyframes dataFlow {
+  0% { stroke-dashoffset: 1000; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.data-flow {
+  stroke-dasharray: 10, 5;
+  animation: dataFlow 20s linear infinite;
+}
+
+/* Attack animation for threat visualization */
+@keyframes attack {
+  0% { stroke: rgba(255, 0, 0, 0.2); stroke-width: 1px; }
+  50% { stroke: rgba(255, 0, 0, 0.8); stroke-width: 3px; }
+  100% { stroke: rgba(255, 0, 0, 0.2); stroke-width: 1px; }
+}
+
+.attack-path {
+  animation: attack 1s ease-in-out infinite;
+}
+
+/* Radar scan animation */
+@keyframes radarScan {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.radar-scan {
+  transform-origin: center;
+  animation: radarScan 4s linear infinite;
+}
+
+/* Pulsing dot for map markers */
+@keyframes pulsingDot {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+.pulsing-dot::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: currentColor;
+  transform: translate(-50%, -50%);
+  animation: pulsingDot 1.5s ease-in-out infinite;
+}
+
+/* Alert badge animation */
+@keyframes alertBadge {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.alert-badge {
+  animation: alertBadge 0.3s ease-out forwards;
+}
+
+/* Typing indicator animation */
+@keyframes typing {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
+.typing-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: currentColor;
+  margin-right: 4px;
+}
+
+.typing-dot:nth-child(1) {
+  animation: typing 1s infinite 0s;
+}
+
+.typing-dot:nth-child(2) {
+  animation: typing 1s infinite 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation: typing 1s infinite 0.4s;
+}
+
+/* Progress bar animation */
+@keyframes progress {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.progress-bar {
+  height: 4px;
+  background-color: #4caf50;
+  width: 0;
+}
+
+.progress-active {
+  animation: progress 2s linear forwards;
+}
+
+/* Countermeasure deployment animation */
+@keyframes deploy {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.deploy {
+  animation: deploy 0.5s ease-out forwards;
+}
+
+/* System recovery animation */
+@keyframes recover {
+  0% { filter: grayscale(100%); opacity: 0.5; }
+  100% { filter: grayscale(0%); opacity: 1; }
+}
+
+.recover {
+  animation: recover 2s ease-in forwards;
+}
+
+/* Connection line animation */
+.connection-line {
+  stroke-dasharray: 5, 5;
+  stroke-dashoffset: 0;
+  animation: dataFlow 30s linear infinite;
+}
+
+/* Pulsing line animation */
+@keyframes pulsingLine {
+  0% { stroke-opacity: 0.2; stroke-width: 1px; }
+  50% { stroke-opacity: 1; stroke-width: 2px; }
+  100% { stroke-opacity: 0.2; stroke-width: 1px; }
+}
+
+.pulsing-line {
+  animation: pulsingLine 2s ease-in-out infinite;
+}
+
+/* Transition utilities */
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+.transition-transform {
+  transition: transform 0.3s ease;
+}
+
+.transition-opacity {
+  transition: opacity 0.3s ease;
+}
+
+.transition-colors {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effects */
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-bright:hover {
+  filter: brightness(1.2);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.5);
+}

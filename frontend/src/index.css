@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark text-gray-100 font-sans;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-dark-light rounded-lg shadow-lg p-4;
+  }
+  
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-all duration-200;
+  }
+  
+  .btn-primary {
+    @apply btn bg-primary hover:bg-primary-dark text-white;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-secondary hover:bg-secondary-dark text-white;
+  }
+  
+  .btn-danger {
+    @apply btn bg-danger hover:bg-danger-dark text-white;
+  }
+  
+  .status-indicator {
+    @apply h-3 w-3 rounded-full;
+  }
+  
+  .status-safe {
+    @apply status-indicator bg-success;
+  }
+  
+  .status-suspicious {
+    @apply status-indicator bg-warning;
+  }
+  
+  .status-attack {
+    @apply status-indicator bg-danger;
+  }
+}
